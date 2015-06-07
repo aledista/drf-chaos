@@ -6,3 +6,5 @@ __pycache__
 .idea*
 /node_modules/
 drf_chaos.egg-info/
+build
+dist
