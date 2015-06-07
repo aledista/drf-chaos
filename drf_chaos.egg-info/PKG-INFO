@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: drf-chaos
+Version: 0.1
+Summary: DRF Extension to test API failures
+Home-page: https://github.com/aledista/drf-chaos
+Author: Alessio Di Stasio
+Author-email: aledista@gmail.com
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python

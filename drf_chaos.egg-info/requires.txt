@@ -1,0 +1,7 @@
+wrapt==1.10.4
+
+[tests]
+Django>=1.6
+flake8
+mock
+pytest

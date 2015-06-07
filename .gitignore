@@ -1,0 +1,7 @@
+.idea
+*.pyc
+.DS_Store
+.env
+__pycache__
+.idea*
+/node_modules/
