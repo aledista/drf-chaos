@@ -3,9 +3,9 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='drf_chaos',
+    name='drf-chaos',
     version='0.1',
-    description='DRF Extension to test API failures',
+    description='Collection of decorators and middlewares for testing DRF API under unexpected circumstances.',
     long_description=open('README.rst').read(),
     author='Alessio Di Stasio',
     author_email='aledista@gmail.com',
@@ -13,12 +13,12 @@ setup(
     license='BSD',
     packages=find_packages(exclude=['tests']),
     install_requires=[
-        'djangorestframework>=2.3.5'
+        'djangorestframework>=2.3.5',
         'wrapt>=1.10'
     ],
     include_package_data=True,
     classifiers=[
-        'Development Status :: 1 - Beta',
+        'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
