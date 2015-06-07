@@ -4,6 +4,11 @@ drf-chaos extension
 drf-chaos is a small collection of decorators and middlewares for
 testing `Django REST Framework`_ API under unexpected circumstances.
 
+Settings
+=========
+
+DRF_CHAOS_ENABLED
+
 Decorators
 ==========
 
@@ -95,6 +100,15 @@ Install using ``pip``\ …
 ::
 
     pip install drf-chaos
+
+Add 'drf_chaos' to your INSTALLED_APPS setting.
+
+::
+
+    INSTALLED_APPS = (
+        ...
+        'drf_chaos',
+    )
 
 .. _Django REST Framework: https://github.com/tomchristie/django-rest-framework
 .. _DRF HTTP status codes: https://github.com/tomchristie/django-rest-framework/blob/master/rest_framework/status.py
