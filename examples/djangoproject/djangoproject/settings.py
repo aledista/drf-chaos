@@ -17,6 +17,8 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
 
+DRF_CHAOS_ENABLED = True
+
 MIDDLEWARE_CLASSES = [
     # 'drf_chaos.middleware.ChaosMiddleware'
 ]
