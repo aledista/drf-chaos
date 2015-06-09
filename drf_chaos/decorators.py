@@ -19,11 +19,11 @@ def chaos(rate):
     return wrapper
 
 
-def delay(rate, seconds):
+def delay(rate, milliseconds):
     @wrapt.decorator
     def wrapper(wrapped, instance, args, kwargs):
         if random() <= rate and DRF_CHAOS_ENABLED:
-            time.sleep(seconds)
+            time.sleep(milliseconds / float(1000))
         return wrapped(*args, **kwargs)
 
     return wrapper

@@ -15,16 +15,16 @@ Decorators
 Delay
 -----
 
-Delay response of a specific amount of seconds
+Delay response of a specific amount of milliseconds
 
-``@delay(rate, seconds)``
+``@delay(rate, milliseconds)``
 
 Params:
 
 ``rate``: probability that an unexpected event happens
 
-``seconds``: suspend execution of the current thread for the given
-number of seconds
+``milliseconds``: suspend execution of the current thread for the given
+number of milliseconds
 
 Error
 -----
@@ -76,7 +76,7 @@ Example
 
 
     class DelayApiView(APIView):
-        @delay(rate=0.5, seconds=3)
+        @delay(rate=0.5, milliseconds=700)
         def get(self, request):
             return Response(status=status.HTTP_204_NO_CONTENT)
 
@@ -95,7 +95,7 @@ Requirements
 Installation
 ============
 
-Install using ``pip``\ …
+Install using ``pip``\
 
 ::
 

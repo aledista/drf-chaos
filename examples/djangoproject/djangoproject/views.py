@@ -9,6 +9,11 @@ from drf_chaos.decorators import (
 )
 
 
+class TestApiView(APIView):
+    def get(self, request):
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
 class ChaosApiView(APIView):
     @chaos(rate=0.5)
     def get(self, request):
@@ -16,7 +21,7 @@ class ChaosApiView(APIView):
 
 
 class DelayApiView(APIView):
-    @delay(rate=0.5, seconds=3)
+    @delay(rate=0.5, milliseconds=700)
     def get(self, request):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
