@@ -1,7 +1,8 @@
 import time
-from random import random, randint
+from random import random, randint, choice
 
 from django.http import HttpResponse
+from django.http.response import REASON_PHRASES
 
 from .settings import DRF_CHAOS_ENABLED
 
@@ -11,6 +12,13 @@ class ChaosMiddleware(object):
         if random() >= 0.5 and DRF_CHAOS_ENABLED:
             time.sleep(randint(0, 3))
             response = HttpResponse()
-            response.status_code = randint(300, 599)
-        else:
-            return response
+            status_code = choice(REASON_PHRASES.keys())
+            response.status_code = status_code
+            response.reason_phrase = REASON_PHRASES.get(
+                status_code,
+                'UNKNOWN STATUS CODE'
+            )
+            response.content = "drf-chaos: {}".format(
+                response.reason_phrase
+            )
+        return response
