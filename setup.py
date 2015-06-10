@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='drf-chaos',
-    version='0.1.2',
+    version='0.1.3',
     description='Collection of decorators and middlewares for testing DRF API under unexpected circumstances.',
     long_description=open('README.rst').read(),
     author='Alessio Di Stasio',

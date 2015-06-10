@@ -6,6 +6,7 @@ from drf_chaos.decorators import (
     chaos,
     delay,
     error,
+    mime,
 )
 
 
@@ -28,5 +29,11 @@ class DelayApiView(APIView):
 
 class ErrorApiView(APIView):
     @error(rate=0.5, status=500)
+    def get(self, request):
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class MimeTypeApiView(APIView):
+    @mime(rate=0.5)
     def get(self, request):
         return Response(status=status.HTTP_204_NO_CONTENT)

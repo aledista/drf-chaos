@@ -26,6 +26,17 @@ Params:
 ``milliseconds``: suspend execution of the current thread for the given
 number of milliseconds
 
+Mime
+-----
+
+Return a random Mime Content-type
+
+``@mime(rate)``
+
+Params:
+
+``rate``: probability that an unexpected event happens
+
 Error
 -----
 
@@ -83,6 +94,12 @@ Example
 
     class ErrorApiView(APIView):
         @error(rate=0.5, status=500)
+        def get(self, request):
+            return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+    class MimeTypeApiView(APIView):
+        @mime(rate=0.5)
         def get(self, request):
             return Response(status=status.HTTP_204_NO_CONTENT)
 
