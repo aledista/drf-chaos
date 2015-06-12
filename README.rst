@@ -1,6 +1,8 @@
 drf-chaos extension
 ===================
 
+.. image:: https://img.shields.io/pypi/v/drf-chaos.svg
+
 drf-chaos is a small collection of decorators and middlewares for
 testing `Django REST Framework`_ API under unexpected circumstances.
 
@@ -26,17 +28,6 @@ Params:
 ``milliseconds``: suspend execution of the current thread for the given
 number of milliseconds
 
-Mime
------
-
-Return a random Mime Content-type
-
-``@mime(rate)``
-
-Params:
-
-``rate``: probability that an unexpected event happens
-
 Error
 -----
 
@@ -50,6 +41,17 @@ Params:
 
 ``status``: integer corresponding to any valid HTTP status code. See
 `DRF HTTP status codes`_
+
+Mime
+-----
+
+Return a random Mime Content-type
+
+``@mime(rate)``
+
+Params:
+
+``rate``: probability that an unexpected event happens
 
 Chaos
 -----
@@ -77,13 +79,7 @@ Example
     from rest_framework.response import Response
     from rest_framework.views import APIView
 
-    from drf_chaos.decorators import chaos, delay, error
-
-
-    class ChaosApiView(APIView):
-        @chaos(rate=0.5)
-        def get(self, request):
-            return Response(status=status.HTTP_204_NO_CONTENT)
+    from drf_chaos.decorators import delay, error, mime, chaos
 
 
     class DelayApiView(APIView):
@@ -100,6 +96,12 @@ Example
 
     class MimeTypeApiView(APIView):
         @mime(rate=0.5)
+        def get(self, request):
+            return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+    class ChaosApiView(APIView):
+        @chaos(rate=0.5)
         def get(self, request):
             return Response(status=status.HTTP_204_NO_CONTENT)
 
